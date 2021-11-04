@@ -31,6 +31,30 @@ console.log(..."ABC","D",..."EFG","H")
 
 //Destructuring. Elimizdeki array in değerlerini değişkenlere atıyoruz.
 
+
+
+let [icAnadolu,marmara,karadeniz,[icAnadoluSehirleri,marmaraSehirleri,karadenizSehirleri]]=
+[
+    {name:"ic anadolu",population:"20M"},
+    {name:"marmara",population:"40M"},
+    {name:"karadeniz",population:"20M"},
+    [
+        ["Ankara","Konya"],1
+        ["Istanbul","Bursa"],
+        ["Sinop","Trabzon"]
+    ]
+]
+console.log(icAnadolu)
+console.log(marmara)
+console.log(karadeniz)
+console.log(karadenizSehirleri)
+
+let newproductName,newunitPrice,newquantity //I can manipulate fields in the instance.
+({productName:newproductName,unitPrice:newunitPrice,quantity:newquantity}={productName:"Elma",unitPrice:10, quantity:5})
+console.log(newproductName)
+console.log(newunitPrice)
+console.log(newquantity)
+
 let populantions =[10000,20000,30000,[40000,50000]]
 let [small,medium,high,[veryhigh,maximum]]=populantions
 
@@ -54,5 +78,20 @@ let {id,name}=category
 
 console.log(id)
 console.log(name)
+
+function add(bisey,...numbers) { //rest
+    let total=0;
+ for (let i = 0; i < numbers.length; i++) {
+        total=total+numbers[i];
+    }
+    console.log(total)
+    console.log(bisey)
+}
+add(20,30) // cikti = > 30 20
+add(20,30,40)
+add(20,30,40,50)
+
+let numbers=[30,10,500,600,120]
+console.log(Math.max(...numbers)) //math.max sayıların en büyüğünü buluyor
 
 
